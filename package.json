@@ -1,0 +1,26 @@
+{
+  "name": "delivery",
+  "version": "0.0.1",
+  "description": "Simple wrap for delivery means: email, SMS and etc.",
+  "main": "delivery.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "./test/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://serg@settv.ru:1022/opt/git/delivery.git"
+  },
+  "keywords": [
+  ],
+  "dependencies": {
+    "rsvp": "^3.0.14"
+  },
+  "devDependencies": {
+    "jsdoc": "^3.3.0-beta1"
+  },
+  "author": "Serg A. Osipov",
+  "license": "ISC"
+}

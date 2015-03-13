@@ -113,7 +113,11 @@ module.exports=function(conf){
 			};
 			if(mail_options.to.length>0){
 				mail_options.subject=arg.subj;
-				mail_options.text=arg.text;
+				if(arg.html){
+					mail_options.html=arg.html;
+				}else{
+					mail_options.text=arg.text;
+				};
 				if(arg.attachments){
 					arg.attachments.forEach(function(att){
 						att.filename = translit(att.filename);

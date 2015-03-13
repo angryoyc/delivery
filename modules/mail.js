@@ -36,8 +36,8 @@ module.exports=function(conf){
 					},
 					function(err){
 						//- console.log(err);
+						task.trycount--;
 						if(task.trycount > 0){
-							task.trycount--;
 							task.start_last = new Date();
 							q.push(task);		// возвращаем задание в очередь
 							busy = false;

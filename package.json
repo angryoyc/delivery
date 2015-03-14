@@ -13,15 +13,20 @@
     "type": "git",
     "url": "ssh://serg@settv.ru:1022/opt/git/delivery.git"
   },
+
   "keywords": [
   ],
+
   "dependencies": {
     "rsvp": "^3.0.14",
-    "nodemailer": "^1.3.2"
+    "nodemailer": "^1.3.2",
+    "cf": "git+ssh://serg@settv.ru:1022/opt/git/cf.git"
   },
+
   "devDependencies": {
     "jsdoc": "^3.3.0-beta1"
   },
+
   "author": "Serg A. Osipov",
   "license": "ISC"
 }

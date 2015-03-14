@@ -5,7 +5,7 @@ var delivery = require('../delivery')(
 	{
 		"service": "Gmail",
 		"user": "serg.osipov@gmail.com",
-		"pass": ""
+		"pass": "wbrkjgtynfygthublhjatyfynhty4865"
 	}
 );
 

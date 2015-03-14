@@ -4,8 +4,8 @@
  * @email serg.osipov@gmail.com
  * @overview Доставка сообщений раличными траспортами: почта, SMS, SMS-сервис
  */
-module.exports=function(conf){
+module.exports=function(){
 	return {
-		mail: require('./modules/mail')(conf)
+		mail: require('./modules/mail')
 	}
 };

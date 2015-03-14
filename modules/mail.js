@@ -36,8 +36,8 @@ module.exports=function(){
 					},
 					function(err){
 						//- console.log(err);
+						task.trycount--;
 						if(task.trycount > 0){
-							task.trycount--;
 							task.start_last = new Date();
 							q.push(task);		// возвращаем задание в очередь
 							busy = false;
@@ -95,10 +95,10 @@ module.exports=function(){
 		var transport = nodemailer.createTransport(transport_options);
 		var mail_options={};
 		mail_options.from = 'Система оповещения '+conf.name+' <'+conf.user+'>';
-		if(isArray(arg.to)){
+		if(cf.isArray(arg.to)){
 			var a=[];
 			arg.to.forEach(function(item){
-				if(isObject(item)){
+				if(cf.isObject(item)){
 					a.push(item.email);
 				}else if(typeof(item)=='string'){
 					a.push(item);
@@ -110,7 +110,11 @@ module.exports=function(){
 		};
 		if(mail_options.to.length>0){
 			mail_options.subject=arg.subj;
-			mail_options.text=arg.text;
+			if(arg.html){
+				mail_options.html=arg.html;
+			}else{
+				mail_options.text=arg.text;
+			};
 			if(arg.attachments){
 				arg.attachments.forEach(function(att){
 					att.filename = translit(att.filename);
@@ -137,15 +141,6 @@ module.exports=function(){
 	} 
 
 	var mail={
-/*
-		send2: function(arg, conf, number_of_try){
-			if(number_of_try>0){
-				return push(arg, conf, number_of_try);
-			}else{
-				return directsend(arg, conf);
-			};
-		},
-*/
 		send: function(arg, conf, number_of_try, cb, cb_err, data){
 			return cf.asy(arguments, function(arg, conf, number_of_try, resolve, reject){
 				if(number_of_try>0){
@@ -161,17 +156,6 @@ module.exports=function(){
 	return mail;
 };
 
-
-// Вспомогательная мелочёвка
-function isArray(obj){
-	if(typeof(obj)=='undefined') return false;
-	return Object.prototype.toString.call(obj) == '[object Array]';
-};
-
-function isObject(obj){
-	if(typeof(obj)=='undefined') return false;
-	return Object.prototype.toString.call(obj) == "[object Object]";
-};
 
 function translit(s){
 	var A = new Array();

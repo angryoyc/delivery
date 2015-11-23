@@ -14,7 +14,7 @@ var q_retry_max = 10; // количество попыток отправки п
 var RSVP = require('rsvp');
 var cf = require('cf');
 
-exports.send= function(arg, conf, number_of_try, cb, cb_err, data){
+exports.send = function(arg, conf, number_of_try, cb, cb_err, data){
 	return cf.asy(arguments, function(arg, conf, number_of_try, resolve, reject){
 		if(number_of_try>0){
 			push(arg, conf, number_of_try, resolve, reject);

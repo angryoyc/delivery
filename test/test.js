@@ -1,5 +1,5 @@
 #!/usr/local/bin/node
-var RSVP = require('rsvp');
+var should = require('should');
 
 var delivery = require('../delivery');
 var conf={
@@ -8,16 +8,22 @@ var conf={
 	"pass": "wbrkjgtynfygthublhjatyfynhty4865"
 };
 
-
-
-delivery.mail.send({to: 'serg.osipov@gmail.com', subj: 'test1', text: 'test1 text'}, conf, 2,
-	function(result){
-		console.log(result);
-	},
-	function(err){
-		console.log(err);
-	}
-);
-console.log('Ok, Google!');
-/*
-*/
+describe('delivery', function(){
+	describe('mail', function(){
+		describe('send', function(){
+			it('should send mail and return object', function(done){
+				this.timeout(15000);
+				delivery.mail.send({to: 'serg.osipov@gmail.com', subj: 'test1', text: 'test1 text'}, conf, 2,
+					function(result){
+						result.should.type('object');
+						result.info.should.type('object');
+						result.info.accepted.should.type('object');
+						result.info.accepted.length.should.above(0);
+						done();
+					},
+					done
+				)
+			});
+		});
+	});
+});

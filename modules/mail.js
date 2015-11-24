@@ -4,7 +4,7 @@
  * @email serg.osipov@gmail.com
  * @overview Отправка почты с промайсами и попытками.
  */
-
+'use strict';
 var nodemailer = require("nodemailer");
 var q = []; // очередь заданий на отправку
 var busy = false;

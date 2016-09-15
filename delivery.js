@@ -6,6 +6,8 @@
  */
 'use strict';
 var mail = require('./modules/mail');
+var sms = require('./modules/sms');
 module.exports={
-	mail: mail
+	mail: mail,
+	sms: sms
 };

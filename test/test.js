@@ -2,11 +2,7 @@
 var should = require('should');
 
 var delivery = require('../delivery');
-var conf={
-	"service": "Gmail",
-	"user": "serg.osipov@gmail.com",
-	"pass": "wbrkjgtynfygthublhjatyfynhty4865"
-};
+var conf= require('./config.json');
 
 describe('delivery', function(){
 	describe('mail', function(){

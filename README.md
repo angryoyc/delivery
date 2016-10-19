@@ -14,9 +14,14 @@ Example
 --------
 ```
 var delivery = require('delivery');
+var conf = {
+	"service": "Gmail",
+	"user": "abunfv@gmail.com",
+	"pass": "abunfv"
+};
 delivery.mail.send({to: 'abunfv@gmail.com', subj: 'test1', text: 'test1 text'}, conf, 2,
 	function(result){
-		console.log(result)
+		console.log(result);
 	},
 	function(err){
 		console.log(err);

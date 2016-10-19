@@ -28,7 +28,7 @@ delivery.mail.send({to: 'abunfv@gmail.com', subj: 'test1', text: 'test1 text'}, 
 Tests
 ------
 1. Copy ./test/config.json.example to ./test/config.json
-2. Edit ./test/config.json end set the correct connection string and then
+2. Edit ./test/config.json end set the correct sender mail parameters and then
 ```
 make test
 ```

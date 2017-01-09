@@ -18,9 +18,8 @@
   ],
 
   "dependencies": {
-    "rsvp": "^3.0.14",
     "nodemailer": "^1.3.2",
-    "cf": "git+ssh://serg@settv.ru:1022/opt/git/cf.git"
+    "cf": "git+https://github.com/angryoyc/cf.git"
   },
 
   "devDependencies": {

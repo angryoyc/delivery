@@ -11,7 +11,7 @@ var busy = false;
 var q_delay = 3000; // неуспешные задания ждут в очереди 3 секунды
 var q_retry_max = 10; // количество попыток отправки почты, прежде, чем задание будет полностью снято
 
-var RSVP = require('rsvp');
+//var RSVP = require('rsvp');
 var cf = require('cf');
 
 
